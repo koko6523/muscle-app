@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 st.title('筋トレ成長記録・管理アプリ')
-st.image('画像.jpg',use_container_width=true)
+st.image('画像.jpg',use_container_width=True)
 
 exercises = ['インクラインダンベルプレス', 'デッドリフト', 'ショルダープレス', 'Tバーロウ']
 selected_exercise = st.sidebar.selectbox('トレーニング種目を選択', exercises)
