@@ -34,9 +34,10 @@ if os.path.exists(file_name):
 else:
     df = pd.DataFrame(columns=['日付', '重量(kg)', '回数'])
 
-st.header(f'【{selected_exercise}】の記録管理')
+st.header(f'【{selected_exercise}】')
 
 # カレンダー設定（column_config）を丸ごと削除して、一番シンプルな1行に戻す
+df['日付'] = df['日付'].astype(str)
 edited_df = st.data_editor(df, num_rows='dynamic', key=f'editor_{selected_exercise}')
 
 if st.button('この内容で保存する'):
