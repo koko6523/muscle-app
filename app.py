@@ -50,5 +50,4 @@ if not edited_df.empty:
     chart_data = edited_df.copy()
     chart_data['日付'] = pd.to_datetime(chart_data['日付'])
     chart_data = chart_data.sort_values('日付')
-    chart_data = chart_data.set_index('日付')
-    st.line_chart(chart_data['重量(kg)'])
+ 　　st.scatter_chart(chart_data, x='日付', y='重量(kg)', size='回数')
