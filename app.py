@@ -1,9 +1,28 @@
 import streamlit as st
 import pandas as pd
 import os
+import base64
+
+def set_background(image_file):
+    if os.path.exists(image_file):
+        with open(image_file, "rb") as f:
+            encoded_string = base64.b64encode(f.read()).decode()
+        css = f"""
+        <style>
+        .stApp {{
+            background-image: url(data:image/jpeg;base64,{encoded_string});
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }}
+        </style>
+        """
+        st.markdown(css, unsafe_allow_html=True)
+
+# 君がアップロードした画像ファイル名に書き換えてね！
+set_background('画像.jpg')
 
 st.title('Managemanet Of Training')
-st.image('画像.jpg',use_container_width=True)
 
 exercises = ['インクラインダンベルプレス', 'デッドリフト', 'ショルダープレス', 'Tバーロウ']
 selected_exercise = st.sidebar.selectbox('トレーニング種目を選択', exercises)
