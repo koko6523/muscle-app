@@ -24,7 +24,7 @@ set_background('画像.jpg')
 
 st.title('Managemanet Of Training')
 
-exercises = ['インクラインダンベルプレス', 'デッドリフト', 'ショルダープレス', 'Tバーロウ']
+exercises = ['Incline Dumbell Press', 'latpulldawn', 'shoulderpress', 'Tbarrow']
 selected_exercise = st.sidebar.selectbox('トレーニング種目を選択', exercises)
 file_name = f'{selected_exercise}.csv'
 
@@ -46,7 +46,7 @@ if st.button('この内容で保存する'):
     st.rerun()
 
 if not edited_df.empty:
-    st.subheader('成長グラフ')
+    st.subheader('Growing Graph')
     chart_data = edited_df.copy()
     chart_data['日付'] = pd.to_datetime(chart_data['日付'])
     chart_data = chart_data.sort_values('日付')
