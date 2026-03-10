@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 
-st.title('managemanet of training')
+st.title('Managemanet Of Training')
 st.image('画像.jpg',use_container_width=True)
 
 exercises = ['インクラインダンベルプレス', 'デッドリフト', 'ショルダープレス', 'Tバーロウ']
